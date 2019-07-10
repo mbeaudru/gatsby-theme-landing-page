@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-theme-jam-example",
-  "author": "Jason Lengstorf <jason@gatsbyjs.com>",
+  "name": "gatsby-theme-landing-page",
+  "author": "Manuel Beaudru <beaudru.manuel@gmail.com>",
   "repository": {
     "type": "git",
-    "url": "https://github.com/jlengstorf/gatsby-theme-jam-example.git"
+    "url": "https://github.com/mbeaudru/gatsby-theme-landing-page.git"
   },
   "version": "1.0.1",
   "main": "index.js",
