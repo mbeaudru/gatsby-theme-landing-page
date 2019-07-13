@@ -1,14 +1,15 @@
-import React from "react"
-import { graphql, useStaticQuery } from "gatsby"
-import styled, { ThemeProvider, createGlobalStyle } from "styled-components"
-import theme from "../theme"
+import React from 'react';
+import PropTypes from 'prop-types';
+import { graphql, useStaticQuery } from 'gatsby';
+import styled, { ThemeProvider, createGlobalStyle } from 'styled-components';
+import theme from '../theme';
 
 const GlobalStyle = createGlobalStyle`
   body {
     margin: 0;
     font-family: ${theme.fontFamily}
   }
-`
+`;
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -19,7 +20,7 @@ const Layout = ({ children }) => {
         }
       }
     }
-  `)
+  `);
 
   return (
     <ThemeProvider theme={theme}>
@@ -33,11 +34,15 @@ const Layout = ({ children }) => {
         </Main>
       </div>
     </ThemeProvider>
-  )
-}
+  );
+};
 
-const Header = styled.div``
-const Main = styled.div``
-const Container = styled.div``
+Layout.propTypes = {
+  children: PropTypes.any,
+};
 
-export default Layout
+const Header = styled.div``;
+const Main = styled.div``;
+const Container = styled.div``;
+
+export default Layout;

@@ -1,12 +1,12 @@
 exports.createPages = ({ actions, reporter }) => {
-  reporter.warn("make sure to load data from somewhere!")
+  reporter.warn('make sure to load data from somewhere!');
 
   // TODO replace this with data from somewhere
   actions.createPage({
-    path: "/",
-    component: require.resolve("./src/templates/page.js"),
+    path: '/',
+    component: require.resolve('./src/templates/page.js'),
     context: {
-      heading: "Your Theme Here",
+      heading: 'Your Theme Here',
       content: `
         <p>
           Use this handy theme example as the basis for your own amazing theme!
@@ -17,5 +17,5 @@ exports.createPages = ({ actions, reporter }) => {
         </p>
       `,
     },
-  })
-}
+  });
+};

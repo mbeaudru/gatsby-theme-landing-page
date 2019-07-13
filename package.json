@@ -3,5 +3,39 @@
   "workspaces": [
     "theme",
     "demo"
-  ]
+  ],
+  "devDependencies": {
+    "eslint": "5.16.0",
+    "eslint-config-airbnb-base": "13.1.0",
+    "eslint-config-prettier": "^6.0.0",
+    "eslint-plugin-import": "2.17.3",
+    "eslint-plugin-react": "^7.14.2",
+    "husky": "2.4.1",
+    "lint-staged": "8.2.1",
+    "prettier": "1.18.2"
+  },
+  "scripts": {
+    "fix": "yarn fix:js && yarn fix:other",
+    "fix:js": "yarn fix-test:js --fix",
+    "fix:other": "yarn fix-test:other --write",
+    "fix-test": "yarn fix-test:other && yarn fix-test:js",
+    "fix-test:other": "yarn prettier --list-different",
+    "fix-test:js": "eslint --ignore-path .gitignore \"**/*.{js,jsx}\"",
+    "prettier": "prettier --ignore-path .gitignore \"**/*.{json,md,scss,yaml,yml}\""
+  },
+  "lint-staged": {
+    "*.{js,jsx}": [
+      "eslint --fix",
+      "git add"
+    ],
+    "*.{json,md,scss,yaml,yml}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  }
 }

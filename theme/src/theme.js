@@ -1,8 +1,8 @@
 export default {
   colors: {
-    primary: "",
-    background: "",
-    text: "",
+    primary: '',
+    background: '',
+    text: '',
   },
   fontFamily: `Oxygen, 'sans-serif'`,
-}
+};

@@ -5,5 +5,5 @@
  */
 
 module.exports = {
-  plugins: ["gatsby-theme-landing-page"],
-}
+  plugins: ['gatsby-theme-landing-page'],
+};
