@@ -1,6 +1,17 @@
 module.exports = {
   siteMetadata: {
-    title: "Gatsby Theme Jam Example Submission",
+    title: "Potato",
   },
-  plugins: ["gatsby-plugin-theme-ui"],
+  plugins: [
+    "gatsby-plugin-styled-components",
+    {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [
+          `Oxygen\:700`, // you can also specify font weights and styles
+        ],
+        display: "swap",
+      },
+    },
+  ],
 }
