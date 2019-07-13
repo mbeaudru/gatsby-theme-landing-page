@@ -35,7 +35,7 @@ const Layout = ({ children }) => {
     <ThemeProvider theme={theme}>
       <Body>
         <Header>
-          <HeaderTitle>Potato</HeaderTitle>
+          <HeaderTitle>Nature Fresh</HeaderTitle>
         </Header>
         <Main>
           <Container>{children}</Container>
