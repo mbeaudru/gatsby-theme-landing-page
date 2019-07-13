@@ -1,38 +1,48 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { graphql, useStaticQuery } from 'gatsby';
 import styled, { ThemeProvider, createGlobalStyle } from 'styled-components';
 import theme from '../theme';
+import {
+  gutterSelector,
+  fontFamilySelector,
+  fontGlobalSizeSelector,
+  fontSizeSelector,
+} from '../utils/themeSelectors';
 
 const GlobalStyle = createGlobalStyle`
+  html,
+  body {
+    height: 100%;
+    font-size: ${fontGlobalSizeSelector('md')}
+  }
+
   body {
     margin: 0;
-    font-family: ${theme.fontFamily}
+    font-family: ${fontFamilySelector}
+  }
+
+  #___gatsby {
+    height: 100%;
+  }
+  
+  #___gatsby > * {
+    height: 100%;
   }
 `;
 
 const Layout = ({ children }) => {
-  const data = useStaticQuery(graphql`
-    query {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `);
-
   return (
     <ThemeProvider theme={theme}>
-      <div>
-        <GlobalStyle />
+      <Body>
         <Header>
-          <span>{data.site.siteMetadata.title}</span>
+          <HeaderTitle>Potato</HeaderTitle>
         </Header>
         <Main>
           <Container>{children}</Container>
         </Main>
-      </div>
+
+        <GlobalStyle />
+      </Body>
     </ThemeProvider>
   );
 };
@@ -41,8 +51,31 @@ Layout.propTypes = {
   children: PropTypes.any,
 };
 
-const Header = styled.div``;
-const Main = styled.div``;
+const Body = styled.div`
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+`;
+
+const Header = styled.div`
+  display: flex;
+  justify-content: space-between;
+  padding: ${gutterSelector('xs')} ${gutterSelector('md')};
+
+  background-color: ${({ theme }) => theme.colors.primary};
+  color: ${({ theme }) => theme.colors.background};
+`;
+
+const HeaderTitle = styled.span`
+  font-size: ${fontSizeSelector('lg')};
+`;
+
+const Main = styled.div`
+  flex: 1;
+  background-color: ${({ theme }) => theme.colors.background};
+  color: ${({ theme }) => theme.colors.primary};
+`;
+
 const Container = styled.div``;
 
 export default Layout;
