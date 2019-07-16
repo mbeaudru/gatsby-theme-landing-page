@@ -1,8 +1,11 @@
-export default {
+import { createGlobalStyle } from 'styled-components';
+
+const theme = {
   colors: {
-    primary: 'white',
-    background: '#b8a08b',
-    text: 'white',
+    primary: '#663399',
+    secondary: '#411d64',
+    background: 'white',
+    text: '#663399',
   },
   font: {
     family: `'Roboto', sans-serif`,
@@ -21,3 +24,26 @@ export default {
     md: '20px',
   },
 };
+
+export default theme;
+
+export const GlobalStyle = createGlobalStyle`
+html,
+body {
+  height: 100%;
+  font-size: ${theme.font.globalSize.md}
+}
+
+body {
+  margin: 0;
+  font-family: ${theme.font.family}
+}
+
+#___gatsby {
+  height: 100%;
+}
+
+#___gatsby > * {
+  height: 100%;
+}
+`;

@@ -1,44 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled, { ThemeProvider, createGlobalStyle } from 'styled-components';
-import theme from '../theme';
-import {
-  gutterSelector,
-  fontFamilySelector,
-  fontGlobalSizeSelector,
-  fontSizeSelector,
-} from '../utils/themeSelectors';
-
-const GlobalStyle = createGlobalStyle`
-  html,
-  body {
-    height: 100%;
-    font-size: ${fontGlobalSizeSelector('md')}
-  }
-
-  body {
-    margin: 0;
-    font-family: ${fontFamilySelector}
-  }
-
-  #___gatsby {
-    height: 100%;
-  }
-  
-  #___gatsby > * {
-    height: 100%;
-  }
-`;
+import styled, { ThemeProvider } from 'styled-components';
+import theme, { GlobalStyle } from '../theme';
+import { gutterSelector, fontSizeSelector } from '../utils/themeSelectors';
 
 const Layout = ({ children }) => {
   return (
     <ThemeProvider theme={theme}>
       <Body>
         <Header>
-          <HeaderTitle>Potato</HeaderTitle>
+          <HeaderTitle>Plume</HeaderTitle>
         </Header>
         <Main>
-          <Container>{children}</Container>
+          <SideMenu>Sidemenu</SideMenu>
+          <ContentBody>{children}</ContentBody>
         </Main>
 
         <GlobalStyle />
@@ -61,8 +36,7 @@ const Header = styled.div`
   display: flex;
   justify-content: space-between;
   padding: ${gutterSelector('xs')} ${gutterSelector('md')};
-
-  background-color: ${({ theme }) => theme.colors.primary};
+  background-color: ${({ theme }) => theme.colors.secondary};
   color: ${({ theme }) => theme.colors.background};
 `;
 
@@ -72,10 +46,20 @@ const HeaderTitle = styled.span`
 
 const Main = styled.div`
   flex: 1;
-  background-color: ${({ theme }) => theme.colors.background};
-  color: ${({ theme }) => theme.colors.primary};
+  display: flex;
 `;
 
-const Container = styled.div``;
+const SideMenu = styled.div`
+  width: 280px;
+  padding: ${gutterSelector('md')};
+  background-color: ${({ theme }) => theme.colors.primary};
+  color: ${({ theme }) => theme.colors.background};
+`;
+const ContentBody = styled.div`
+  flex: 1;
+  background-color: ${({ theme }) => theme.colors.background};
+  color: ${({ theme }) => theme.colors.primary};
+  padding: ${gutterSelector('md')};
+`;
 
 export default Layout;
