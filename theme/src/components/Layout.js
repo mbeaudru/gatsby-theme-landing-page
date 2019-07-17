@@ -4,6 +4,9 @@ import styled, { ThemeProvider } from 'styled-components';
 import theme, { GlobalStyle } from '../theme';
 import { gutterSelector, fontSizeSelector } from '../utils/themeSelectors';
 
+// Next step: use react-treebeard to generate sidemenu
+// https://github.com/storybookjs/react-treebeard
+
 const Layout = ({ children }) => {
   return (
     <ThemeProvider theme={theme}>
