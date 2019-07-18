@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import styled, { ThemeProvider } from 'styled-components';
 import theme, { GlobalStyle } from '../theme';
 import { gutterSelector, fontSizeSelector } from '../utils/themeSelectors';
+import TreeMenu from '../menu/components/TreeMenu';
 
 // Next step: use react-treebeard to generate sidemenu
 // https://github.com/storybookjs/react-treebeard
@@ -15,7 +16,7 @@ const Layout = ({ children }) => {
           <HeaderTitle>Plume</HeaderTitle>
         </Header>
         <Main>
-          <SideMenu>Sidemenu</SideMenu>
+          <TreeMenu />
           <ContentBody>{children}</ContentBody>
         </Main>
 
@@ -50,13 +51,6 @@ const HeaderTitle = styled.span`
 const Main = styled.div`
   flex: 1;
   display: flex;
-`;
-
-const SideMenu = styled.div`
-  width: 280px;
-  padding: ${gutterSelector('md')};
-  background-color: ${({ theme }) => theme.colors.primary};
-  color: ${({ theme }) => theme.colors.background};
 `;
 const ContentBody = styled.div`
   flex: 1;
