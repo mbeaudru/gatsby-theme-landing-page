@@ -21,7 +21,9 @@
     "fix-test": "yarn fix-test:other && yarn fix-test:js",
     "fix-test:other": "yarn prettier --list-different",
     "fix-test:js": "eslint --ignore-path .gitignore \"**/*.{js,jsx}\"",
-    "prettier": "prettier --ignore-path .gitignore \"**/*.{json,md,scss,yaml,yml}\""
+    "prettier": "prettier --ignore-path .gitignore \"**/*.{json,md,scss,yaml,yml}\"",
+    "demo": "yarn workspace demo",
+    "plume": "yarn workspace gatsby-theme-plume"
   },
   "lint-staged": {
     "*.{js,jsx}": [
