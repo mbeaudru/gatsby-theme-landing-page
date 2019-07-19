@@ -20,7 +20,7 @@ export default function TreeLeaf({ items, path = '/', activePaths, onToggle }) {
         };
         return (
           <li key={node.name} onClick={e => onItemClick(e, item)}>
-            {node.name}
+            {node.name} {node.isFile && '(File)'}
             {node.items && isActive(item.path) && (
               <TreeLeaf
                 items={node.items}
