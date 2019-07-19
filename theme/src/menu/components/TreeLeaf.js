@@ -3,9 +3,7 @@ import PropTypes from 'prop-types';
 
 export default function TreeLeaf({ items, path = '/', activePaths, onToggle }) {
   function isActive(itemPath) {
-    return !!activePaths.find(activePath => {
-      return activePath.includes(itemPath);
-    });
+    return activePaths[itemPath];
   }
 
   function onItemClick(e, item) {
@@ -46,6 +44,6 @@ TreeLeaf.propTypes = {
     })
   ),
   path: PropTypes.string,
-  activePaths: PropTypes.arrayOf(PropTypes.string).isRequired,
+  activePaths: PropTypes.object.isRequired,
   onToggle: PropTypes.func.isRequired,
 };

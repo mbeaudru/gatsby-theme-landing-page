@@ -15,6 +15,10 @@ export default function TreeMenu() {
             name
             childMdx {
               rawBody
+              frontmatter {
+                title
+                category
+              }
             }
           }
         }

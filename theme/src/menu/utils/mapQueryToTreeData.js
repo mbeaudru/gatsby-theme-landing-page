@@ -55,7 +55,14 @@ function mapDirectoriesToItems({ directories, item, items }) {
   if (!exists) {
     nextItems.push({
       name: currentDirectory,
-      items: [],
+      items:
+        remainingDirectories.length > 0
+          ? mapDirectoriesToItems({
+              directories: remainingDirectories,
+              item,
+              items: [],
+            })
+          : [],
     });
   }
 
