@@ -1,7 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
 import { useStaticQuery, graphql } from 'gatsby';
-import { gutterSelector } from '../../utils/themeSelectors';
 import TreeLeaf from './TreeLeaf';
 import useTreeMenu from '../hooks/useTreeMenu';
 
@@ -29,19 +27,10 @@ export default function TreeMenu() {
   const [treeData, onToggle] = useTreeMenu(data);
 
   return (
-    <Container>
-      <TreeLeaf
-        items={treeData.items}
-        onToggle={onToggle}
-        activePaths={treeData.activePaths}
-      />
-    </Container>
+    <TreeLeaf
+      items={treeData.items}
+      onToggle={onToggle}
+      activePaths={treeData.activePaths}
+    />
   );
 }
-
-const Container = styled.div`
-  width: 280px;
-  padding: ${gutterSelector('md')};
-  background-color: ${({ theme }) => theme.colors.primary};
-  color: ${({ theme }) => theme.colors.background};
-`;

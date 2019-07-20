@@ -3,10 +3,7 @@ import PropTypes from 'prop-types';
 import styled, { ThemeProvider } from 'styled-components';
 import theme, { GlobalStyle } from '../theme';
 import { gutterSelector, fontSizeSelector } from '../utils/themeSelectors';
-import TreeMenu from '../menu/components/TreeMenu';
-
-// Next step: use react-treebeard to generate sidemenu
-// https://github.com/storybookjs/react-treebeard
+import SideNav from '../menu/components/SideNav';
 
 const Layout = ({ children }) => {
   return (
@@ -16,7 +13,7 @@ const Layout = ({ children }) => {
           <HeaderTitle>Plume</HeaderTitle>
         </Header>
         <Main>
-          <TreeMenu />
+          <SideNav />
           <ContentBody>{children}</ContentBody>
         </Main>
 

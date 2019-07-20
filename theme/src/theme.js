@@ -9,11 +9,13 @@ const theme = {
   },
   font: {
     family: `'Roboto', sans-serif`,
+    familySecondary: `Trebuchet`,
     globalSize: {
       md: '16px',
     },
     size: {
       md: '1rem',
+      md2: '1.1rem',
       lg: '1.5rem',
       xl: '1.7rem',
     },
