@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { FaChevronDown, FaChevronRight } from 'react-icons/fa';
-import { gutterSelector } from '../../utils/themeSelectors';
+import { gutterSelector, colorSelector } from '../../utils/themeSelectors';
 
 export default function FolderItem({ label, onClick, items, active }) {
   return (
@@ -37,10 +37,14 @@ const Container = styled.span`
   padding: ${gutterSelector('sm')} ${gutterSelector('md')};
 
   &:hover {
-    background-color: #562882;
+    background-color: ${colorSelector('darkerLightPrimary')};
   }
 `;
 
 const Label = styled.span``;
 
-const Icon = styled.span``;
+const Icon = styled.span`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;

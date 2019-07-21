@@ -1,12 +1,14 @@
 import { createGlobalStyle } from 'styled-components';
 
+const colors = {
+  primary: '#663399',
+  lightPrimary: '#f8f1ff',
+  darkerLightPrimary: '#ecd9ff',
+  background: 'white',
+};
+
 const theme = {
-  colors: {
-    primary: '#663399',
-    secondary: '#411d64',
-    background: 'white',
-    text: '#663399',
-  },
+  colors,
   font: {
     family: `'Roboto', sans-serif`,
     familySecondary: `Trebuchet`,

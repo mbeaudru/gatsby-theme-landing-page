@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import TreeMenu from './TreeMenu';
+import { colorSelector } from '../../utils/themeSelectors';
 
 export default function SideNav() {
   return (
@@ -12,6 +13,6 @@ export default function SideNav() {
 
 const Container = styled.div`
   width: 280px;
-  background-color: ${({ theme }) => theme.colors.primary};
-  color: ${({ theme }) => theme.colors.background};
+  background-color: ${colorSelector('lightPrimary')};
+  color: ${colorSelector('primary')};
 `;

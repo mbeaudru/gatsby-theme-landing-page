@@ -37,7 +37,7 @@ const Header = styled.div`
   display: flex;
   justify-content: space-between;
   padding: ${gutterSelector('xs')} ${gutterSelector('md')};
-  background-color: ${({ theme }) => theme.colors.secondary};
+  background-color: ${({ theme }) => theme.colors.primary};
   color: ${({ theme }) => theme.colors.background};
 `;
 

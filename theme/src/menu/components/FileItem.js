@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import {
   gutterSelector,
   fontFamilySecondarySelector,
+  colorSelector,
 } from '../../utils/themeSelectors';
 
 export default function FileItem({ label, active, onClick }) {
@@ -29,6 +30,6 @@ const Li = styled.li`
   font-family: ${fontFamilySecondarySelector};
 
   &:hover {
-    background-color: #562882;
+    background-color: ${colorSelector('darkerLightPrimary')};
   }
 `;
