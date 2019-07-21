@@ -15,16 +15,6 @@ exports.onPreBootstrap = ({ store }) => {
     debug(`creating ${dir}`);
     mkdirp.sync(dir);
 
-    debug(`adding a sample welcome file`);
-    fs.writeFileSync(
-      dir + '/welcome.md',
-      `
-# Welcome
-
-This is a welcome file.
-    `.trim()
-    );
-
     debug(`adding a sample hello section folder`);
     mkdirp.sync(dir + '/hello');
 
@@ -35,6 +25,18 @@ This is a welcome file.
 # World
 
 This is a world sample file, inside hello section.
+    `.trim()
+    );
+  }
+
+  if (!fs.existsSync(dir + '/home.md')) {
+    debug(`adding a sample welcome file`);
+    fs.writeFileSync(
+      dir + '/home.md',
+      `
+# Welcome
+
+This is the home page.
     `.trim()
     );
   }
@@ -75,11 +77,14 @@ exports.createPages = ({ graphql, actions }) => {
     const mdxDocuments = result.data.allMdx.edges;
 
     mdxDocuments.forEach(mdxDocument => {
+      const nodeSlug = mdxDocument.node.fields.slug;
+      const slug = nodeSlug === '/home/' ? '/' : nodeSlug;
+
       createPage({
-        path: mdxDocument.node.fields.slug,
+        path: slug,
         component: mdxPageTemplate,
         context: {
-          slug: mdxDocument.node.fields.slug,
+          slug: slug,
           id: mdxDocument.node.id,
         },
       });

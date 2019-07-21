@@ -2,11 +2,16 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import _get from 'lodash/get';
 import PropTypes from 'prop-types';
+import { MDXRenderer } from 'gatsby-plugin-mdx';
 import Layout from '../components/Layout';
 
 const PageTemplate = ({ data }) => {
   const node = _get(data, 'allMdx.edges.0.node');
-  return <Layout>{node.id}</Layout>;
+  return (
+    <Layout>
+      <MDXRenderer>{node.body}</MDXRenderer>
+    </Layout>
+  );
 };
 
 PageTemplate.propTypes = {
@@ -20,9 +25,8 @@ export const pageQuery = graphql`
     allMdx(filter: { id: { eq: $id } }) {
       edges {
         node {
-          fileAbsolutePath
           id
-          mdxAST
+          body
         }
       }
     }
