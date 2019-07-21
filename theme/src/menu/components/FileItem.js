@@ -8,23 +8,32 @@ import {
   colorSelector,
 } from '../../utils/themeSelectors';
 
-export default function FileItem({ label, active, onClick, node }) {
+export default function FileItem({
+  label,
+  onClick,
+  node,
+  activePaths,
+  fileActive,
+}) {
   return (
-    <Li onClick={onClick} active={active}>
-      <StyledLink to={node.fields.slug}>{label}</StyledLink>
+    <Li onClick={onClick} active={fileActive}>
+      <StyledLink to={node.fields.slug} state={{ activePaths }}>
+        {label}
+      </StyledLink>
     </Li>
   );
 }
 
 FileItem.propTypes = {
   label: PropTypes.string,
-  active: PropTypes.bool,
+  fileActive: PropTypes.bool,
   onClick: PropTypes.func,
   node: PropTypes.shape({
     fields: PropTypes.shape({
       slug: PropTypes.string,
     }),
   }),
+  activePaths: PropTypes.object,
 };
 
 const Li = styled.li`
@@ -33,6 +42,12 @@ const Li = styled.li`
   user-select: none;
   font-family: ${fontFamilySecondarySelector};
   display: flex;
+
+  ${({ active, ...props }) =>
+    active &&
+    `
+  border-right: 4px solid ${colorSelector('primary')(props)};
+  `}
 `;
 
 const StyledLink = styled(Link)`

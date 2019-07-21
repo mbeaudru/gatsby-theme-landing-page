@@ -4,15 +4,15 @@ import styled from 'styled-components';
 import { FaChevronDown, FaChevronRight } from 'react-icons/fa';
 import { gutterSelector, colorSelector } from '../../utils/themeSelectors';
 
-export default function FolderItem({ label, onClick, items, active }) {
+export default function FolderItem({ label, onClick, items, folderOpen }) {
   return (
     <Li onClick={onClick}>
       <Container>
         <Label>{label}</Label>
-        <Icon>{active ? <FaChevronDown /> : <FaChevronRight />}</Icon>
+        <Icon>{folderOpen ? <FaChevronDown /> : <FaChevronRight />}</Icon>
       </Container>
 
-      {active && items}
+      {folderOpen && items}
     </Li>
   );
 }
@@ -21,7 +21,7 @@ FolderItem.propTypes = {
   label: PropTypes.string,
   onClick: PropTypes.func,
   items: PropTypes.any,
-  active: PropTypes.bool,
+  folderOpen: PropTypes.bool,
 };
 
 const Li = styled.li`

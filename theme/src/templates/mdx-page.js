@@ -4,18 +4,22 @@ import _get from 'lodash/get';
 import PropTypes from 'prop-types';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import Layout from '../components/Layout';
+import LocationContext from '../contexts/LocationContext';
 
-const PageTemplate = ({ data }) => {
+const PageTemplate = ({ data, location }) => {
   const node = _get(data, 'allMdx.edges.0.node');
   return (
-    <Layout>
-      <MDXRenderer>{node.body}</MDXRenderer>
-    </Layout>
+    <LocationContext.Provider value={location}>
+      <Layout>
+        <MDXRenderer>{node.body}</MDXRenderer>
+      </Layout>
+    </LocationContext.Provider>
   );
 };
 
 PageTemplate.propTypes = {
   data: PropTypes.object,
+  location: PropTypes.object,
 };
 
 export default PageTemplate;

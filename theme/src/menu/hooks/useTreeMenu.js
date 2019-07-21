@@ -1,8 +1,12 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
+import _get from 'lodash/get';
 import mapQueryToTreeData from '../utils/mapQueryToTreeData';
+import LocationContext from '../../contexts/LocationContext';
 
 export default function useTreeMenu(queryData) {
-  const [activePaths, setActivePaths] = useState({});
+  const location = useContext(LocationContext);
+  const initialActivePaths = mapLocationToInitialActivePaths(location);
+  const [activePaths, setActivePaths] = useState(initialActivePaths);
 
   const treeData = mapQueryToTreeData(queryData);
 
@@ -20,4 +24,20 @@ export default function useTreeMenu(queryData) {
   treeData.activePaths = activePaths;
 
   return [treeData, onToggle];
+}
+
+function mapLocationToInitialActivePaths(location) {
+  const activePathsLocationState = _get(location, 'state.activePaths', {});
+
+  let path = '/';
+
+  location.pathname
+    .split('/')
+    .filter(s => !!s)
+    .forEach(folder => {
+      path = path + folder + '/';
+      activePathsLocationState[path] = true;
+    });
+
+  return activePathsLocationState;
 }

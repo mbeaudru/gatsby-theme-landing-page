@@ -1,6 +1,7 @@
 const Debug = require('debug');
 const fs = require('fs');
 const mkdirp = require('mkdirp');
+const slugify = require('slugify');
 
 const { createFilePath } = require(`gatsby-source-filesystem`);
 
@@ -62,6 +63,7 @@ exports.createPages = ({ graphql, actions }) => {
               }
               frontmatter {
                 title
+                category
               }
             }
           }
@@ -77,8 +79,7 @@ exports.createPages = ({ graphql, actions }) => {
     const mdxDocuments = result.data.allMdx.edges;
 
     mdxDocuments.forEach(mdxDocument => {
-      const nodeSlug = mdxDocument.node.fields.slug;
-      const slug = nodeSlug === '/home/' ? '/' : nodeSlug;
+      const slug = mdxDocument.node.fields.slug;
 
       createPage({
         path: slug,
@@ -96,7 +97,20 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions;
 
   if (node.internal.type === 'Mdx') {
-    const value = createFilePath({ node, getNode });
+    let value = createFilePath({ node, getNode });
+
+    const category = node.frontmatter.category;
+    const title = node.frontmatter.title;
+    if (category) {
+      value =
+        category.reduce((acc, c) => `${acc}${slugify(c.toLowerCase())}/`, '/') +
+        slugify(title.toLowerCase()) +
+        '/';
+    }
+
+    if (value === '/home/') {
+      value = '/';
+    }
 
     createNodeField({
       id: node.id,

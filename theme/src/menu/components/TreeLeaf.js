@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
+import slugify from 'slugify';
+import _get from 'lodash/get';
 import FolderItem from './FolderItem';
 import FileItem from './FileItem';
 import FolderItemsContainer from './FolderItemsContainer';
+import LocationContext from '../../contexts/LocationContext';
 
 export default function TreeLeaf({
   items,
@@ -11,8 +14,14 @@ export default function TreeLeaf({
   onToggle,
   level = 0,
 }) {
-  function isActive(itemPath) {
+  const location = useContext(LocationContext);
+
+  function isFolderOpen(itemPath) {
     return activePaths[itemPath];
+  }
+
+  function isFileActive(itemPath) {
+    return itemPath === _get(location, 'pathname');
   }
 
   function onItemClick(e, item) {
@@ -24,9 +33,12 @@ export default function TreeLeaf({
     <FolderItemsContainer level={level}>
       {items.map(node => {
         const item = {
-          path: path + node.name + '/',
+          ...node,
+          path: path + slugify(node.name.toLowerCase()) + '/',
           isDir: !!node.items,
         };
+
+        if (!item.name) return null;
 
         const FolderOrFileComponent = node.isFile ? FileItem : FolderItem;
 
@@ -46,8 +58,10 @@ export default function TreeLeaf({
                 />
               )
             }
-            active={isActive(item.path)}
+            folderOpen={isFolderOpen(item.path)}
+            fileActive={isFileActive(item.path)}
             node={node}
+            activePaths={activePaths}
           />
         );
       })}
