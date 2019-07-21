@@ -6,13 +6,14 @@ const mapQueryToTreeData = _memoize(queryResult => {
     name: 'root',
     items: [],
   };
-  const files = _get(queryResult, 'allFile.edges');
+  const files = _get(queryResult, 'allMdx.edges');
 
   files.forEach(file => {
-    const categories = _get(file, 'node.childMdx.frontmatter.category');
-    const title = _get(file, 'node.childMdx.frontmatter.title');
+    const categories = _get(file, 'node.frontmatter.category');
+    const title = _get(file, 'node.frontmatter.title');
+    const itemProperties = _get(file, 'node', {});
 
-    const item = { name: title, isFile: true };
+    const item = { ...itemProperties, name: title, isFile: true };
 
     if (!categories) {
       treeBeardData.items.push(item);

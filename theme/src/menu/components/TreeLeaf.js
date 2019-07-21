@@ -47,6 +47,7 @@ export default function TreeLeaf({
               )
             }
             active={isActive(item.path)}
+            node={node}
           />
         );
       })}

@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled, { ThemeProvider } from 'styled-components';
+import { Link } from 'gatsby';
 import theme, { GlobalStyle } from '../theme';
 import { gutterSelector, fontSizeSelector } from '../utils/themeSelectors';
 import SideNav from '../menu/components/SideNav';
@@ -10,7 +11,7 @@ const Layout = ({ children }) => {
     <ThemeProvider theme={theme}>
       <Body>
         <Header>
-          <HeaderTitle>Plume</HeaderTitle>
+          <HeaderTitle to="/">Plume</HeaderTitle>
         </Header>
         <Main>
           <SideNav />
@@ -41,8 +42,10 @@ const Header = styled.div`
   color: ${({ theme }) => theme.colors.background};
 `;
 
-const HeaderTitle = styled.span`
+const HeaderTitle = styled(Link)`
   font-size: ${fontSizeSelector('lg')};
+  color: inherit;
+  text-decoration: none;
 `;
 
 const Main = styled.div`

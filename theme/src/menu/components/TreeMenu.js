@@ -6,17 +6,15 @@ import useTreeMenu from '../hooks/useTreeMenu';
 export default function TreeMenu() {
   const data = useStaticQuery(graphql`
     query TreeMenuQuery {
-      allFile {
+      allMdx {
         edges {
           node {
-            relativePath
-            name
-            childMdx {
-              rawBody
-              frontmatter {
-                title
-                category
-              }
+            frontmatter {
+              title
+              category
+            }
+            fields {
+              slug
             }
           }
         }
