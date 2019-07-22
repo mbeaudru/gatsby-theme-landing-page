@@ -67,7 +67,3 @@ yarn-error.log
 .pnp.js
 # Yarn Integrity file
 .yarn-integrity
-
-
-# Ignore content folder to ensure it's created by the theme automatically
-content
