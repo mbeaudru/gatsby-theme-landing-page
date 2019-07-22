@@ -1,6 +1,7 @@
 import { useState } from 'react';
 
-export default function usePlaygroundDisplay(initialCode) {
+export default function usePlaygroundDisplay(initialRawCode) {
+  const initialCode = initialRawCode.trim('');
   const [showEditor, toggleEditor] = useState(false);
   const [nextCode, updateCode] = useState(initialCode);
   const [runningCode, setRunningCode] = useState(initialCode);
