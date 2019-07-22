@@ -24,9 +24,16 @@ exports.onPreBootstrap = ({ store }) => {
       dir + '/styling' + '/tags.md',
       `
 ---
-category: ["Styling"]
+category: ['Styling']
 title: Tags
 ---
+
+# Custom tags
+
+Here you can observe how most of the markdown tags and syntax is rendered. Of course, you can fully customize this !
+
+## Headings
+
 # H1
 
 This is the home page.
@@ -50,6 +57,25 @@ Lorem ipsum dez ezdaz idozaj dioazj doizajo dizajo idjaz oidj
 ##### H5
 
 Lorem ipsum dez ezdaz idozaj dioazj doizajo dizajo idjaz oidj
+
+## Blockquote
+
+> This is a nice quote right there !
+
+## List
+
+- Shopping list
+  - Bacon
+  - Eggs
+  - Cheese
+
+## Table
+
+| Tables        |      Are      | Cool |
+| ------------- | :-----------: | ---: |
+| col 3 is      | right-aligned | 1600 |
+| col 2 is      |   centered    |   12 |
+| zebra stripes |   are neat    |    1 |      
     `.trim()
     );
   }

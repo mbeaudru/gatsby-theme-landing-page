@@ -5,6 +5,7 @@ const colors = {
   lightPrimary: '#f8f1ff',
   darkerLightPrimary: '#ecd9ff',
   background: 'white',
+  normal: 'black',
 };
 
 const theme = {
@@ -25,6 +26,7 @@ const theme = {
     xs: '5px',
     sm: '10px',
     md: '20px',
+    lg: '40px',
   },
 };
 
