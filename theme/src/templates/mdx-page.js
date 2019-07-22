@@ -7,10 +7,11 @@ import { MDXProvider } from '@mdx-js/react';
 import styled from 'styled-components';
 import Layout from '../components/Layout';
 import LocationContext from '../contexts/LocationContext';
+import Playground from '../mdx/components/playground/Playground';
 
 import * as tags from '../mdx/components/tags';
 
-const components = { ...tags };
+const components = { ...tags, Playground };
 
 const PageTemplate = ({ data, location }) => {
   const node = _get(data, 'allMdx.edges.0.node');
