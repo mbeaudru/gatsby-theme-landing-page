@@ -17,18 +17,39 @@ exports.onPreBootstrap = ({ store }) => {
     mkdirp.sync(dir);
 
     debug(`adding a sample hello section folder`);
-    mkdirp.sync(dir + '/hello');
+    mkdirp.sync(dir + '/styling');
 
     debug(`adding a sample world section item`);
     fs.writeFileSync(
-      dir + '/hello' + '/world.md',
+      dir + '/styling' + '/tags.md',
       `
 ---
-category: ["Hello"]
-title: World
+category: ["Styling"]
+title: Tags
 ---
+# H1
 
-This is a world sample file, inside hello section.
+This is the home page.
+
+## H2
+
+Lorem ipsum dez ezdaz idozaj dioazj doizajo dizajo idjaz oidj
+
+Lorem ipsum dez ezdaz idozaj dioazj doizajo dizajo idjaz oidj
+
+Lorem ipsum dez ezdaz idozaj dioazj doizajo dizajo idjaz oidj
+
+### H3
+
+Lorem ipsum dez ezdaz idozaj dioazj doizajo dizajo idjaz oidj
+
+#### H4
+
+Lorem ipsum dez ezdaz idozaj dioazj doizajo dizajo idjaz oidj
+
+##### H5
+
+Lorem ipsum dez ezdaz idozaj dioazj doizajo dizajo idjaz oidj
     `.trim()
     );
   }
@@ -48,10 +69,6 @@ This is the home page.
 
 exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions;
-  createPage({
-    path: '/',
-    component: require.resolve('./src/templates/page.js'),
-  });
 
   const mdxPageTemplate = require.resolve(`./src/templates/mdx-page.js`);
   return graphql(
