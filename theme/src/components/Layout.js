@@ -58,10 +58,6 @@ const ContentBody = styled.div`
   color: ${({ theme }) => theme.colors.primary};
   padding: ${gutterSelector('md')};
   padding-bottom: ${gutterSelector('lg')};
-
-  > :first-child {
-    margin-top: 0;
-  }
 `;
 
 export default Layout;

@@ -32,8 +32,6 @@ title: Tags
 
 Here you can observe how most of the markdown tags and syntax is rendered. Of course, you can fully customize this !
 
-## Headings
-
 # H1
 
 This is the home page.

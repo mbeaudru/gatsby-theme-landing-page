@@ -4,6 +4,7 @@ import _get from 'lodash/get';
 import PropTypes from 'prop-types';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import { MDXProvider } from '@mdx-js/react';
+import styled from 'styled-components';
 import Layout from '../components/Layout';
 import LocationContext from '../contexts/LocationContext';
 
@@ -17,13 +18,23 @@ const PageTemplate = ({ data, location }) => {
   return (
     <LocationContext.Provider value={location}>
       <Layout>
-        <MDXProvider components={components}>
-          <MDXRenderer>{node.body}</MDXRenderer>
-        </MDXProvider>
+        <Container>
+          <MDXProvider components={components}>
+            <MDXRenderer>{node.body}</MDXRenderer>
+          </MDXProvider>
+        </Container>
       </Layout>
     </LocationContext.Provider>
   );
 };
+
+const Container = styled.div`
+  max-width: 800px;
+
+  > :first-child {
+    margin-top: 0;
+  }
+`;
 
 PageTemplate.propTypes = {
   data: PropTypes.object,
