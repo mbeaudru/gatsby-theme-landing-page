@@ -8,8 +8,6 @@ export const gutterSelector = size => props =>
 export const fontSelector = props => themeSelector(props).font;
 
 export const fontFamilySelector = () => props => fontSelector(props).family;
-export const fontFamilySecondarySelector = () => props =>
-  fontSelector(props).familySecondary;
 
 export const fontGlobalSizeSelector = size => props =>
   fontSelector(props).globalSize[size];

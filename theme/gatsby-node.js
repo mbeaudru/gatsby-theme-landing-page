@@ -23,7 +23,10 @@ exports.onPreBootstrap = ({ store }) => {
     fs.writeFileSync(
       dir + '/hello' + '/world.md',
       `
-# World
+---
+category: ["Hello"]
+title: World
+---
 
 This is a world sample file, inside hello section.
     `.trim()

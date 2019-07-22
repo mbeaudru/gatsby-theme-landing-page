@@ -41,7 +41,9 @@ const Container = styled.span`
   }
 `;
 
-const Label = styled.span``;
+const Label = styled.span`
+  font-weight: bold;
+`;
 
 const Icon = styled.span`
   display: flex;

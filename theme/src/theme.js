@@ -11,7 +11,6 @@ const theme = {
   colors,
   font: {
     family: `'Roboto', sans-serif`,
-    familySecondary: `Trebuchet`,
     globalSize: {
       md: '16px',
     },

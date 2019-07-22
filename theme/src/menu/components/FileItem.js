@@ -4,7 +4,6 @@ import styled from 'styled-components';
 import { Link } from 'gatsby';
 import {
   gutterSelector,
-  fontFamilySecondarySelector,
   colorSelector,
 } from '../../utils/themeSelectors';
 
@@ -40,7 +39,6 @@ const Li = styled.li`
   list-style: none;
   cursor: pointer;
   user-select: none;
-  font-family: ${fontFamilySecondarySelector};
   display: flex;
 
   ${({ active, ...props }) =>
