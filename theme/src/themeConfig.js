@@ -1,15 +1,8 @@
 import { createGlobalStyle } from 'styled-components';
+import colors from './colors';
+import meta from './meta';
 
-const colors = {
-  primary: '#663399',
-  veryDarkPrimary: '#1a0b29',
-  lightPrimary: '#f8f1ff',
-  darkerLightPrimary: '#ecd9ff',
-  background: 'white',
-  normal: 'black',
-};
-
-const theme = {
+const styledTheme = {
   colors,
   font: {
     family: `'Roboto', sans-serif`,
@@ -31,18 +24,23 @@ const theme = {
   },
 };
 
-export default theme;
+const config = {
+  meta,
+  styled: styledTheme,
+};
+
+export default config;
 
 export const GlobalStyle = createGlobalStyle`
 html,
 body {
   height: 100%;
-  font-size: ${theme.font.globalSize.md}
+  font-size: ${styledTheme.font.globalSize.md}
 }
 
 body {
   margin: 0;
-  font-family: ${theme.font.family}
+  font-family: ${styledTheme.font.family}
 }
 
 #___gatsby {

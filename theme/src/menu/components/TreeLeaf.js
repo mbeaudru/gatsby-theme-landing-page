@@ -2,9 +2,9 @@ import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import slugify from 'slugify';
 import _get from 'lodash/get';
-import FolderItem from './FolderItem';
-import FileItem from './FileItem';
-import FolderItemsContainer from './FolderItemsContainer';
+import FolderItem from '../../components/FolderItem';
+import FileItem from '../../components/FileItem';
+import FolderItemList from '../../components/FolderItemList';
 import LocationContext from '../../contexts/LocationContext';
 
 export default function TreeLeaf({
@@ -30,7 +30,7 @@ export default function TreeLeaf({
   }
 
   return (
-    <FolderItemsContainer level={level}>
+    <FolderItemList level={level}>
       {items.map(node => {
         const item = {
           ...node,
@@ -65,7 +65,7 @@ export default function TreeLeaf({
           />
         );
       })}
-    </FolderItemsContainer>
+    </FolderItemList>
   );
 }
 

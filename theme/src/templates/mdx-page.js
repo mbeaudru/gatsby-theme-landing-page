@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import { MDXProvider } from '@mdx-js/react';
 import styled from 'styled-components';
-import Layout from '../components/Layout';
+import Layout from '../layouts/MDXPageLayout';
 import LocationContext from '../contexts/LocationContext';
 import Playground from '../mdx/components/playground/Playground';
 

@@ -5,5 +5,8 @@
  */
 
 module.exports = {
+  siteMetadata: {
+    title: 'Plume',
+  },
   plugins: ['gatsby-theme-plume'],
 };

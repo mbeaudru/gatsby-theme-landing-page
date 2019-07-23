@@ -1,7 +1,4 @@
 module.exports = {
-  siteMetadata: {
-    title: 'Potato',
-  },
   plugins: [
     {
       resolve: `gatsby-plugin-mdx`,

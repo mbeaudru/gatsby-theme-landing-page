@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { FaChevronDown, FaChevronRight } from 'react-icons/fa';
-import { gutterSelector, colorSelector } from '../../utils/themeSelectors';
+import { gutterSelector, colorSelector } from '../utils/themeSelectors';
 
 export default function FolderItem({ label, onClick, items, folderOpen }) {
   return (

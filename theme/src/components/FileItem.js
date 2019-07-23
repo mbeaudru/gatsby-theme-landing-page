@@ -1,11 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { Link } from 'gatsby';
-import {
-  gutterSelector,
-  colorSelector,
-} from '../../utils/themeSelectors';
+import { gutterSelector, colorSelector } from '../utils/themeSelectors';
+import NavigationLink from './NavigationLink';
 
 export default function FileItem({
   label,
@@ -48,7 +45,7 @@ const Li = styled.li`
   `}
 `;
 
-const StyledLink = styled(Link)`
+const StyledLink = styled(NavigationLink)`
   display: block;
   flex: 1;
   color: inherit;
