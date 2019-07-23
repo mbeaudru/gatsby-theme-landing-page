@@ -22,7 +22,7 @@ export default function Playground({
       noInline={noInline}
       mountStylesheet={false}
     >
-      <SegmentBox p={10} bg="white" my={10}>
+      <Segment>
         <FlexSeparator>
           <div>
             <Title>{title}</Title>
@@ -37,9 +37,9 @@ export default function Playground({
           </ShowCodeContainer>
         </FlexSeparator>
 
-        <div>
+        <PreviewContainer>
           <LivePreview />
-        </div>
+        </PreviewContainer>
 
         <StyledLiveError />
 
@@ -61,7 +61,7 @@ export default function Playground({
             <StyledLiveEditor onChange={code.update} />
           </LiveProvider>
         )}
-      </SegmentBox>
+      </Segment>
     </LiveProvider>
   );
 }
@@ -109,11 +109,11 @@ const StyledLiveError = styled(LiveError)`
   margin-bottom: ${gutterSelector('sm')};
 `;
 
-const SegmentBox = styled.div`
+const Segment = styled.div`
   width: 100%;
   box-shadow: rgb(204, 204, 204) 0px 1px 2px;
   padding: ${gutterSelector('sm')};
-  background-color: ${colorSelector('lightPrimary')};
+  background-color: ${colorSelector('background')};
   margin: ${gutterSelector('md')} 0;
 `;
 
@@ -135,4 +135,8 @@ const ActionItem = styled.div`
   ${({ disabled }) => disabled && 'opacity: 0.5'};
   padding: ${gutterSelector('sm')};
   border-right: 1px solid ${colorSelector('background')};
+`;
+
+const PreviewContainer = styled.div`
+  margin-top: ${gutterSelector('md')};
 `;

@@ -16,6 +16,13 @@ module.exports = {
         path: `content`,
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `src`,
+        path: `src`,
+      },
+    },
     'gatsby-plugin-styled-components',
     {
       resolve: `gatsby-plugin-google-fonts`,
