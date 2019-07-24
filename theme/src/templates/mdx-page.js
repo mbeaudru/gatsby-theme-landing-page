@@ -5,11 +5,13 @@ import PropTypes from 'prop-types';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import { MDXProvider } from '@mdx-js/react';
 import styled from 'styled-components';
+import { Helmet } from 'react-helmet';
 import Layout from '../layouts/MDXPageLayout';
 import LocationContext from '../contexts/LocationContext';
 import Playground from '../mdx/components/playground/Playground';
 
 import * as tags from '../mdx/components/tags';
+import meta from '../meta';
 
 const components = { ...tags, Playground };
 
@@ -18,6 +20,9 @@ const PageTemplate = ({ data, location }) => {
 
   return (
     <LocationContext.Provider value={location}>
+      <Helmet>
+        <title>{meta.siteName}</title>
+      </Helmet>
       <Layout>
         <Container>
           <MDXProvider components={components}>
