@@ -1,5 +1,5 @@
 import React from 'react';
-import Playground from '../../../../theme/src/mdx/components/playground/Playground';
+import { Playground } from 'gatsby-theme-plume';
 import Feed from '../Feed';
 import Icon from '../../elements/Icon';
 

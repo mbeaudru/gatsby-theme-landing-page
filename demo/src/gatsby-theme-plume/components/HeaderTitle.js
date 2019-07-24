@@ -1,18 +1,19 @@
 import styled from 'styled-components';
-import NavigationLink from '../../../../theme/src/components/NavigationLink';
-import {
-  fontSizeSelector,
-  fontFamilySelector,
-  gutterSelector,
-} from '../../../../theme/src/utils/themeSelectors';
+import { Link } from 'gatsby';
+import { selectors } from 'gatsby-theme-plume';
 
-const HeaderTitle = styled(NavigationLink)`
-  font-size: ${fontSizeSelector('lg')};
+const HeaderTitle = styled(Link)`
+  font-size: ${selectors.fontSizeSelector('lg')};
   color: inherit;
   text-decoration: none;
+  text-decoration: none;
   font-weight: bold;
-  font-family: ${fontFamilySelector};
-  margin: ${gutterSelector('xs')} 0;
+  font-family: ${selectors.fontFamilySelector};
+  margin: ${selectors.gutterSelector('xs')} 0;
+
+  &:hover {
+    color: inherit;
+  }
 `;
 
 export default HeaderTitle;
