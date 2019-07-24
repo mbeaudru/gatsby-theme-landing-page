@@ -1,3 +1,3 @@
 export default {
-  siteName: 'Semantic UI Demo',
+  siteName: 'Plume Demo - Semantic UI',
 };
