@@ -9,7 +9,7 @@ exports.onPreBootstrap = ({ store }) => {
   const debug = Debug('gatsby-theme-plume:onPreBoostrap');
 
   const { program } = store.getState();
-  const dir = `${program.directory}/content`;
+  const dir = `${program.directory}/src`;
   debug(`ensuring ${dir} exists`);
 
   if (!fs.existsSync(dir)) {

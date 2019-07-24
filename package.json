@@ -2,7 +2,8 @@
   "private": true,
   "workspaces": [
     "theme",
-    "demo"
+    "demo",
+    "minimal-demo"
   ],
   "devDependencies": {
     "eslint": "5.16.0",
@@ -23,7 +24,8 @@
     "fix-test:js": "eslint --ignore-path .gitignore \"**/*.{js,jsx}\"",
     "prettier": "prettier --ignore-path .gitignore \"**/*.{json,md,scss,yaml,yml}\"",
     "demo": "yarn workspace demo",
-    "plume": "yarn workspace gatsby-theme-plume"
+    "plume": "yarn workspace gatsby-theme-plume",
+    "minimal-demo": "yarn workspace minimal-demo"
   },
   "lint-staged": {
     "*.{js,jsx}": [
