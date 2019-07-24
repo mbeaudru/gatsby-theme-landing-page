@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { colorSelector, gutterSelector } from '../../utils/themeSelectors';
+import { colorSelector, gutterSelector } from './utils/themeSelectors';
 
 // eslint-disable-next-line
 export const h1 = styled.h1`
@@ -15,19 +15,19 @@ export const h2 = styled.h2`
 `;
 
 export const h3 = styled.h3`
-  font-size: 2rem;
+  font-size: 1.4rem;
 `;
 
 export const h4 = styled.h4`
-  font-size: 1.8rem;
+  font-size: 1.1rem;
 `;
 
 export const h5 = styled.h5`
-  font-size: 1.6rem;
+  font-size: 0.8rem;
 `;
 
 export const h6 = styled.h6`
-  font-size: 1.4rem;
+  font-size: 0.6rem;
 `;
 
 export const p = styled.p`
@@ -53,10 +53,12 @@ export const ul = styled.ul`
   padding-left: ${gutterSelector('md')};
   list-style: disc outside;
   margin-bottom: ${gutterSelector('sm')};
+  color: ${colorSelector('normal')};
 `;
 
 export const li = styled.li`
   padding: 2px 0;
+  color: ${colorSelector('normal')};
 
   ul:first-child {
     margin-top: 5px;
@@ -74,6 +76,7 @@ export const table = styled.table`
   td {
     padding: ${gutterSelector('xs')} ${gutterSelector('md')};
     text-align: center;
+    color: ${colorSelector('normal')};
   }
 
   thead tr {
