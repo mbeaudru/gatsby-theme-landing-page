@@ -19,7 +19,7 @@ const MDXPageLayout = ({ children }) => {
         <HeaderBar>
           <HeaderBarLeft>
             <BurgerIcon onClick={() => toggleBurger(!burgerOn)} />
-            <HeaderTitle to="/">{themeConfig.meta.siteName}</HeaderTitle>
+            <HeaderTitle to="/docs">{themeConfig.meta.siteName}</HeaderTitle>
           </HeaderBarLeft>
         </HeaderBar>
         <LayoutContainer>

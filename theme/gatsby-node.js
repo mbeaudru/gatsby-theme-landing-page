@@ -133,6 +133,19 @@ exports.createPages = ({ graphql, actions }) => {
           id: mdxDocument.node.id,
         },
       });
+
+      // If the project doesnt already have a landing page
+      // we create a documentation homepage for it.
+      if (slug === '/docs/') {
+        createPage({
+          path: '/',
+          component: mdxPageTemplate,
+          context: {
+            slug: slug,
+            id: mdxDocument.node.id,
+          },
+        });
+      }
     });
   });
 };
@@ -160,7 +173,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
       id: node.id,
       name: `slug`,
       node,
-      value,
+      value: '/docs' + value,
     });
   }
 };
