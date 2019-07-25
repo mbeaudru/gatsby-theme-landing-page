@@ -8,7 +8,15 @@ title: Usage
 
 ### MDX
 
-- :warning: You must use frontmatter category & title properties to make your content appear into the tree.
+:warning: You must use frontmatter category & title properties to make your content appear into the tree.
+
+- title (mandatory)
+
+The title of the file, will be used to display the file name into the side menu tree.
+
+- category (optional)
+
+Is an array of strings that will correspond to the folder hierarchy where the file will be available.
 
 ## Theme customization
 

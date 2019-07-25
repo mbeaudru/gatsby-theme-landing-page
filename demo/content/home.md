@@ -8,7 +8,7 @@ This gatsby theme allows you to easily build a documentation website.
 
 On the first run, the theme will create some files to begin with: now the only thing you will have to do will be to begin write some documentation !
 
-> **Note :** See [installation instructions](/instructions/installation/) and [usage information](/instructions/usage/) for more details
+> **Note :** See [installation instructions](/docs/instructions/installation/) and [usage information](/docs/instructions/usage/) for more details
 
 ## Powered by MDX :muscle:
 
@@ -22,12 +22,14 @@ For instance, this is a playground for _Colored Buttons_: you can toggle the edi
 
 <ColorPlay />
 
+> **Note :** You can check more examples of Playground usages in the Components section, for instance [Button](/docs/components/elements/button/) :ok_hand:.
+
 ## Fully customisable :pencil:
 
 **Theme shadowing** is a gatsby feature that allows you to replace any file / component of the theme by your own if you want to.
 
 In making the theme, we purposely made some components explicitly available for shadowing. The intent is to use this feature for maximal customization power - but making the most commonly customized files easily accessible.
 
-For more details on how to customize the theme, check the [theme customization](/instructions/usage/) instructions.
+For more details on how to customize the theme, check the [theme customization](/docs/instructions/usage/) instructions.
 
 > **Note :** We used this feature to produce this theme around semantic-ui in order to override the _colors_ and the _navigation tree_.
