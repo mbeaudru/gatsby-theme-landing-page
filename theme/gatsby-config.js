@@ -10,8 +10,8 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `src`,
-        path: `src`,
+        name: `content`,
+        path: `content`,
       },
     },
     'gatsby-plugin-styled-components',
