@@ -4,7 +4,9 @@ title: Installation
 
 # Installation instructions
 
-## In your existing gatsby project
+## Add the theme to your gatsby project
+
+> **Note :** If you don't have any project, just start with _gatsby new my-awesome-project_
 
 Add the theme to your project dependencies:
 
@@ -18,7 +20,9 @@ module.exports = {
 };
 ```
 
-Run the project !
+- Run the project and go to _http://localhost:8000/docs_ !
+
+> **Note :** If you don't have any _src/index.js_ file in your project, the theme will also create a default route so that you have a gatsby site exclusively dedicated to your plume documentation.
 
 ## Just try the demos
 

@@ -1,5 +1,9 @@
 import styled from 'styled-components';
-import { colorSelector, gutterSelector } from './utils/themeSelectors';
+import {
+  colorSelector,
+  gutterSelector,
+  fontFamilySelector,
+} from './utils/themeSelectors';
 
 // eslint-disable-next-line
 export const h1 = styled.h1`
@@ -87,3 +91,19 @@ export const table = styled.table`
     border-bottom: 1px solid ${colorSelector('darkerLightPrimary')};
   }
 `;
+
+export const pre = styled.pre`
+  background-color: ${colorSelector('lightPrimary')};
+  color: ${colorSelector('normal')};
+  padding: ${gutterSelector('sm')};
+  font-family: ${fontFamilySelector};
+`;
+
+export const code = styled.code`
+  background-color: ${colorSelector('lightPrimary')};
+  color: ${colorSelector('normal')};
+  font-family: ${fontFamilySelector};
+  padding: 0 ${gutterSelector('xs')};
+`;
+
+export const inlineCode = code;
