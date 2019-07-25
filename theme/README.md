@@ -1,51 +1,30 @@
-# Gatsby Theme Jam Example Submission
+# Gatsby theme plume
 
-This is a bare-bones Gatsby theme to showcase how a [Theme Jam](https://themejam.gatsbyjs.org) submission should look.
+![image](https://user-images.githubusercontent.com/8942633/61910428-f3812c80-af34-11e9-9c9f-bc6e6696d451.png)
 
-See the [live demo](https://gatsby-theme-jam-example.netlify.com)
+> Documentation is better seen in the [theme demo page](https://amazing-keller-25527f.netlify.com/). If not available, you can also [find it here ](/demo/content/home.md).
+
+## In a nutshell
+
+- Easy to start with :ok_hand:
+- Powered by MDX :muscle:
+- Code playground included :gift:
+- Fully customisable :pencil:
 
 ## Installation
 
-To use this theme in your Gatsby sites, follow these instructions:
+- `yarn add gatsby-theme-plume`
 
-1.  Install the theme
+Declare the plugin in _gatsby-config.js_:
 
-    ```sh
-    npm install --save gatsby-theme-jam-example
-    ```
+```
+module.exports = {
+  plugins: ['gatsby-theme-plume'],
+};
+```
 
-2.  Add the theme to your `gatsby-config.js`:
+- Run the project and go to _http://localhost:8000/docs_ !
 
-    ```js
-    module.exports = {
-      plugins: ['gatsby-theme-jam-example'],
-    };
-    ```
+## Usage
 
-3.  Start your site
-    ```sh
-    gatsby develop
-    ```
-
-## Submission Checklist
-
-To ensure your Theme Jam submission [follows the rules](https://themejam.gatsbyjs.org/rules), use this checklist:
-
-- [ ] Use our [accessibility guide][a11y] to ensure your site meets our accessibility standards
-- [ ] Run a performance audit using [Lighthouse][] and/or [WebPageTest][]
-- [ ] Set up a live demo using [Netlify][] or [GitHub Pages][]
-- [ ] Add installation documentation to the README
-- [ ] Update the `name` field in `package.json`
-- [ ] Update the `author` field in `package.json`
-- [ ] Update the `repository` field in `package.json`
-- [ ] Make sure the theme’s `keywords` in `package.json` include `gatsby`, `gatsby-theme`, and `gatsby-plugin`
-- [ ] Publish your theme to npm ([docs][npmpublish])
-- [ ] Submit your theme at https://themejam.gatsbyjs.org
-
-[a11y]: https://gatsbyjs.org/docs/making-your-site-accessible#how-to-improve-accessibility
-[lighthouse]: https://developers.google.com/web/tools/lighthouse/
-[axe]: https://www.deque.com/axe/
-[webpagetest]: http://webpagetest.org/
-[netlify]: https://netlify.com
-[github pages]: https://pages.github.com/
-[npmpublish]: https://docs.npmjs.com/cli/publish
+Create MD(X) files in the _content_ folder of your project
