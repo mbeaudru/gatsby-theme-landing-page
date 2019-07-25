@@ -1,62 +1,30 @@
-# Gatsby Theme Jam Submission Example
+# Gatsby theme plume
 
-This repo is an example and potential starting point for theme creators.
+![image](https://user-images.githubusercontent.com/8942633/61910428-f3812c80-af34-11e9-9c9f-bc6e6696d451.png)
 
-It includes:
+> Documentation is better seen in the [theme demo page](https://amazing-keller-25527f.netlify.com/). If not available, you can also [find it here ](/demo/content/home.md).
 
-- a bare-bones theme (located in `theme/`) that includes basic setup
-- a demo site (located in `demo/`) that installs the theme
-- a Yarn workspaces configuration so the theme and demo can be worked on simultaneously
+## In a nutshell
 
-## How to use this repo
+- Easy to start with :ok_hand:
+- Powered by MDX :muscle:
+- Code playground included :gift:
+- Fully customisable :pencil:
 
-**NOTE:** Make sure to replace `USERNAME` with your GitHub username and `THEMENAME` with your theme name.
+## Installation
 
-1.  Fork this repo.
+- `yarn add gatsby-theme-plume`
 
-2.  Rename the forked repo `gatsby-theme-THEMENAME`. (Make sure to replace `THEMENAME` with your chosen name.)
+Declare the plugin in _gatsby-config.js_:
 
-3.  Get the theme set up locally.
+```
+module.exports = {
+  plugins: ['gatsby-theme-plume'],
+};
+```
 
-    ```sh
-    # clone the repo
-    git clone git@github.com:USERNAME/gatsby-theme-THEMENAME.git
+- Run the project and go to _http://localhost:8000/docs_ !
 
-    # move into the directory
-    cd gatsby-theme-THEMENAME
+## Usage
 
-    # install dependencies
-    yarn
-    ```
-
-4.  Update `theme/package.json` with your info.
-
-    ```diff
-      {
-    +   "name": "gatsby-theme-THEMENAME",
-    +   "author": "Your Name <name@example.com>",
-        "repository": {
-          "type": "git",
-    +     "url": "https://github.com/USERNAME/gatsby-theme-THEMENAME.git"
-        },
-    ```
-
-5.  Start the demo site.
-
-    ```sh
-    yarn workspace demo develop
-    ```
-
-    The demo will start at http://localhost:8000
-
-    **NOTE:** If you’re new to Yarn workspaces, check out [this post](https://www.gatsbyjs.org/blog/2019-05-22-setting-up-yarn-workspaces-for-theme-development/) for details.
-
-6.  Start editing the theme! The demo site is configured to use the local theme, so any changes you make to the local `theme` directory will be reflected on the demo site for easy local development.
-
-7.  Follow the [submission checklist](./theme/README.md#submission-checklist) to make sure your theme qualifies to win!
-
-8.  [Submit your theme](https://themejam.gatsbyjs.org/submit) to win!
-
-## More information
-
-For contest rules and more information, see [the Theme Jam website](https://themejam.gatsbyjs.org).
+Create MD(X) files in the _content_ folder of your project

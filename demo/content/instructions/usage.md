@@ -8,7 +8,7 @@ title: Usage
 
 ### MDX
 
-- Use frontmatter category & title properties to make your content appear into the tree.
+- :warning: You must use frontmatter category & title properties to make your content appear into the tree.
 
 ## Theme customization
 
