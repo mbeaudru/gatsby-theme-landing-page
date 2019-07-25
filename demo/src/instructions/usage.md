@@ -14,7 +14,7 @@ title: Usage
 
 **Theme shadowing** is a gatsby feature that allows you to replace any file / component of the theme by your own if you want to.
 
-In making the theme, we purposedly made some components explicitly available for shadowing. The intent is to use this feature for maximal customization power - but making the most commonly customized files easily accessible.
+In making the theme, we purposely made some components explicitly available for shadowing. The intent is to use this feature for maximal customization power - but making the most commonly customized files easily accessible.
 
 ### Files you probably want to shadow
 
